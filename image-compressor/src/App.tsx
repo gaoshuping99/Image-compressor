@@ -27,7 +27,9 @@ async function compressImageOnServer(file: File, quality: number, targetSizeKB: 
   formData.append('file', file);
   formData.append('quality', quality.toString());
   formData.append('targetSizeKB', targetSizeKB.toString());
-  const res = await fetch('http://localhost:3000/api/image/compress', {
+  // Jscbc: 动态获取后端API地址
+  const BASE_URL = import.meta.env.VITE_API_BASE_URL;
+  const res = await fetch(`${BASE_URL}/api/image/compress`, {
     method: 'POST',
     body: formData,
   });
