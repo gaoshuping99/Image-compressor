@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 // Jscbc: 导入必要的 React 钩子
 import imageCompression from "browser-image-compression"; // Jscbc: 引入前端图片压缩库
+import Chatbot from './components/Chatbot';
 
 interface ImageInfo {
   file: File;
@@ -273,6 +274,7 @@ const App: React.FC = () => {
         </div>
         <footer className="mt-10 text-gray-400 text-xs text-center w-full">© {new Date().getFullYear()} Apple 风格图片压缩工具</footer>
       </div>
+      <Chatbot />
     </div>
   );
 };
